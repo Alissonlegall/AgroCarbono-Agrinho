@@ -1,0 +1,227 @@
+/* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-escuro: #1B3A28;
+    --verde-medio: #2C5E3A;
+    --verde-claro: #4A7C59;
+    --bege: #F3EDE1;
+    --marrom-terra: #8B5A2B;
+    --branco: #FFFFFF;
+    --cinza-texto: #333333;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --borda-radius: 12px;
+    --transicao-padrao: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f7f2;
+    color: var(--cinza-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--verde-medio));
+    color: var(--branco);
+    padding: 2rem 0;
+    text-align: center;
+    border-bottom: 4px solid var(--marrom-terra);
+    box-shadow: var(--sombra);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ===== LAYOUT PRINCIPAL COM GRID ===== */
+main {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.8rem;
+    padding: 2.5rem 0;
+}
+
+.card {
+    background: var(--branco);
+    border-radius: var(--borda-radius);
+    padding: 2rem;
+    box-shadow: var(--sombra);
+    border: 1px solid #eae2d6;
+    transition: var(--transicao-padrao);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    color: var(--verde-escuro);
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--bege);
+}
+
+/* ===== FORMULÁRIOS ===== */
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--verde-escuro);
+    font-size: 0.95rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #d6cec0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transicao-padrao);
+    background-color: var(--bege);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 0 3px rgba(44, 94, 58, 0.2);
+    background-color: var(--branco);
+}
+
+.btn-primario {
+    background-color: var(--verde-medio);
+    color: var(--branco);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    width: 100%;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primario:hover {
+    background-color: var(--verde-escuro);
+    transform: scale(1.02);
+}
+
+/* ===== ÁREAS DE RESULTADO ===== */
+.mensagem-info, .resultado-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #f0f5f1;
+    border-left: 5px solid var(--verde-medio);
+    font-size: 0.95rem;
+    display: none;
+}
+
+.resultado-box {
+    background-color: #fefcf7;
+    border-left-color: var(--marrom-terra);
+}
+
+.resultado-box p {
+    margin-bottom: 0.5rem;
+}
+
+.resultado-box strong {
+    color: var(--verde-escuro);
+}
+
+.destaque-positivo {
+    color: var(--verde-medio);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    background-color: var(--verde-escuro);
+    color: var(--bege);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+footer strong {
+    color: var(--branco);
+}
+
+.ia-info {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        width: 95%;
+    }
+    
+    main {
+        grid-template-columns: 1fr;
+        padding: 1.5rem 0;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+    }
+    
+    .btn-primario {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}

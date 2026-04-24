@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroCarbono - Lucro Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Planejamento e revisão de textos com auxílio de IA (Gemini) -->
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <h1>AgroCarbono</h1>
+            <p class="subtitulo">Lucro inteligente: Diagnóstico e Sustentabilidade</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Seção 1: Boas-vindas e Personalização -->
+        <section id="secao-fazenda" class="card">
+            <h2>1. Sua Fazenda</h2>
+            <form id="form-fazenda" aria-label="Dados da fazenda">
+                <div class="input-group">
+                    <label for="nome-fazenda">Nome da Fazenda:</label>
+                    <input type="text" id="nome-fazenda" placeholder="Ex: Fazenda Boa Vista" required>
+                </div>
+                <div class="input-group">
+                    <label for="tamanho-fazenda">Área Total (hectares):</label>
+                    <input type="number" id="tamanho-fazenda" placeholder="Ex: 150" min="0.1" step="any" required>
+                </div>
+                <button type="submit" class="btn-primario">Carregar Dados</button>
+            </form>
+            <p id="mensagem-boasvindas" class="mensagem-info"></p>
+        </section>
+
+        <!-- Seção 2: Diagnóstico Florestal e Créditos de Carbono -->
+        <section id="secao-carbono" class="card" style="display: none;">
+            <h2>2. Diagnóstico Florestal e Créditos de Carbono</h2>
+            <form id="form-carbono" aria-label="Diagnóstico ambiental">
+                <div class="input-group">
+                    <label for="bioma">Bioma da Propriedade:</label>
+                    <select id="bioma" required>
+                        <option value="">Selecione...</option>
+                        <option value="amazonia">Amazônia</option>
+                        <option value="cerrado">Cerrado</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="mata-nativa">Área de Mata Nativa Preservada (ha):</label>
+                    <input type="number" id="mata-nativa" placeholder="Ex: 80" min="0" step="any" required>
+                </div>
+                <button type="submit" class="btn-primario">Calcular Créditos</button>
+            </form>
+            <div id="resultado-carbono" class="resultado-box" style="display: none;"></div>
+        </section>
+
+        <!-- Seção 3: Otimização de Insumos -->
+        <section id="secao-insumos" class="card" style="display: none;">
+            <h2>3. Otimização de Insumos - Taxa Variável</h2>
+            <form id="form-insumos" aria-label="Simulador de economia">
+                <div class="input-group">
+                    <label for="gasto-fertilizante">Gasto médio atual com fertilizantes (R$/ano):</label>
+                    <input type="number" id="gasto-fertilizante" placeholder="Ex: 25000" min="0" step="any" required>
+                </div>
+                <button type="submit" class="btn-primario">Simular Economia</button>
+            </form>
+            <div id="resultado-insumos" class="resultado-box" style="display: none;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Projeto desenvolvido para o concurso <strong>Agrinho</strong>.</p>
+            <p>&copy; 2024 AgroCarbono. Construindo um Agro forte, futuro sustentável.</p>
+            <p class="ia-info">Textos base gerados e revisados com auxílio de IA (Gemini).</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
